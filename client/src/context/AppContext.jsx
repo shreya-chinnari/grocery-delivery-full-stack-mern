@@ -19,9 +19,15 @@ export const AppContextProvider = ({ children }) => {
 		showUserLogin,
 		setShowUserLogin,
 	};
-	return (
-		<AppContext.Provider value={{ value }}>{children}</AppContext.Provider>
-	);
+	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
+	const value = {
+		user,
+		setUser,
+		navigate,
+		isSeller,
+		setIsSeller,
+	};
+	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
 export const useAppContext = () => {
